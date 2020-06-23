@@ -1,4 +1,4 @@
-package jeju.ac.kr.post;
+package jeju.ac.kr.post.Domain;
 
 
 import lombok.Getter;
@@ -6,19 +6,19 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class Board {
+public class BoardDto {
 
     private int id;
     private String name;
     private String phone;
     private String email;
 
-    public Board() {
+    public BoardDto() {
 
     }
 
 
-    public Board(int id, String name, String phone, String email) {
+    public BoardDto(int id, String name, String phone, String email) {
         this.id = id;
         this.name = name;
         this.phone = phone;

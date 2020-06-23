@@ -1,6 +1,8 @@
 package jeju.ac.kr.post;
 
 
+import jeju.ac.kr.post.DaoFactory.BoardDao;
+import jeju.ac.kr.post.Domain.BoardDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,19 +17,19 @@ public class BoardService {
     @Autowired
     private BoardDao boardDao;
 
-    public Board getBoard(final int id) {
+    public BoardDto getBoard(final int id) {
         return boardDao.getBoard(id);
     }
 
-    public List<Board> getBoards() {
+    public List<BoardDto> getBoards() {
         return boardDao.getBoards();
     }
 
-    public void addBoard(final Board board) {
+    public void addBoard(final BoardDto board) {
         boardDao.addBoard(board);
     }
 
-    public void updateBoard(final Board board) {
+    public void updateBoard(final BoardDto board) {
         boardDao.updateBoard(board);
     }
 
