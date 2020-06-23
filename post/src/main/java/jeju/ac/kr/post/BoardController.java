@@ -35,7 +35,7 @@ public class BoardController {
         return "add";
     }
 
-    @PostMapping("/add/boardr")
+    @PostMapping("/add/board")
     public String addBoard(@RequestParam(value="name",required=true) String name,
                            @RequestParam(value="name",required=true) String phone,
                            @RequestParam(value="name",required=true) String email, ModelMap boardModel) {
