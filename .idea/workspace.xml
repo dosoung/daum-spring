@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c994dc52-928f-47b6-9b9e-8a7891174fe7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/post/src/main/java/jeju/ac/kr/post/BoardDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/post/src/main/java/jeju/ac/kr/post/BoardService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/post/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/post/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/post/src/main/java/jeju/ac/kr/post/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/post/src/main/java/jeju/ac/kr/post/Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/post/src/main/java/jeju/ac/kr/post/BoardDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/post/src/main/java/jeju/ac/kr/post/BoardDao.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +79,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1592931386689</updated>
-      <workItem from="1592931390984" duration="1685000" />
+      <workItem from="1592931390984" duration="2357000" />
     </task>
     <servers />
   </component>
@@ -91,6 +90,10 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="320" y="115" key="#Inspections" timestamp="1592933786408">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="320" y="115" key="#Inspections/0.0.1440.900/-1920.-70.1920.1080@0.0.1440.900" timestamp="1592933786408" />
     <state x="533" y="166" key="#com.intellij.ide.util.MemberChooser" timestamp="1592933102106">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -99,10 +102,10 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="569" y="357" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1440.900/-1920.-70.1920.1080@0.0.1440.900" timestamp="1592932329643" />
-    <state width="500" height="445" key="SwitcherDM" timestamp="1592933534312">
+    <state width="500" height="445" key="SwitcherDM" timestamp="1592934308639">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="500" height="445" key="SwitcherDM/0.0.1440.900/-1920.-70.1920.1080@0.0.1440.900" timestamp="1592933534312" />
+    <state width="500" height="445" key="SwitcherDM/0.0.1440.900/-1920.-70.1920.1080@0.0.1440.900" timestamp="1592934308639" />
     <state x="397" y="282" key="com.intellij.ide.util.TipDialog" timestamp="1592931392938">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
