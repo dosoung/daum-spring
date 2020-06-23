@@ -30,4 +30,9 @@ dependencies {
     implementation('mysql:mysql-connector-java:8.0.17')
     //required only if jdk 9 or higher version is used
     runtimeOnly('javax.xml.bind:jaxb-api:2.4.0-b180830.0359')
+    compileOnly 'org.projectlombok:lombok:1.18.12'
+    annotationProcessor 'org.projectlombok:lombok:1.18.12'
+
+    testCompileOnly 'org.projectlombok:lombok:1.18.12'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.12'
 }
