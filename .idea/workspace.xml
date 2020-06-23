@@ -2,8 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c994dc52-928f-47b6-9b9e-8a7891174fe7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/post/src/main/java/jeju/ac/kr/post/BoardController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/post/src/main/java/jeju/ac/kr/post/TestController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/post/src/main/resources/META-INF/resources/WEB-INF/jsp/board.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/post/src/main/resources/META-INF/resources/WEB-INF/jsp/boards.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/post/src/main/resources/META-INF/resources/WEB-INF/jsp/test.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/post/src/main/webapp/WEB-INF/board.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/post/src/main/webapp/WEB-INF/boards.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/post/src/main/webapp/WEB-INF/test.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/daum-spring.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/daum-spring.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/post/src/main/java/jeju/ac/kr/post/BoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/post/src/main/java/jeju/ac/kr/post/BoardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/post/src/main/java/jeju/ac/kr/post/BoardDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/post/src/main/java/jeju/ac/kr/post/BoardDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/post/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/post/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,7 +32,12 @@
       <state>
         <projects_view>
           <tree_state>
-            <expand />
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="post" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
             <select />
           </tree_state>
         </projects_view>
@@ -53,11 +70,25 @@
     <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="jdk.selected.JAVA_MODULE" value="11" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/post/src/main/resources/META-INF/resources/WEB-INF/jsp" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/post/src/main/resources/META-INF/resources/WEB-INF/jsp" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="PostApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
@@ -78,7 +109,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1592931386689</updated>
-      <workItem from="1592931390984" duration="3365000" />
+      <workItem from="1592931390984" duration="6004000" />
     </task>
     <servers />
   </component>
@@ -93,6 +124,10 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="320" y="115" key="#Inspections/0.0.1440.900/-1920.-70.1920.1080@0.0.1440.900" timestamp="1592933786408" />
+    <state x="435" y="260" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1592938066422">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="435" y="260" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1440.900/-1920.-47.1920.1057@0.0.1440.900" timestamp="1592938066422" />
     <state x="533" y="166" key="#com.intellij.ide.util.MemberChooser" timestamp="1592933102106">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -101,10 +136,62 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="569" y="357" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1440.900/-1920.-70.1920.1080@0.0.1440.900" timestamp="1592932329643" />
-    <state width="500" height="445" key="SwitcherDM" timestamp="1592934308639">
+    <state width="1398" height="245" key="GridCell.Tab.0.bottom" timestamp="1592938140236">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="500" height="445" key="SwitcherDM/0.0.1440.900/-1920.-70.1920.1080@0.0.1440.900" timestamp="1592934308639" />
+    <state width="1398" height="245" key="GridCell.Tab.0.bottom/0.0.1440.900/-1920.-47.1920.1057@0.0.1440.900" timestamp="1592938125260" />
+    <state width="1398" height="245" key="GridCell.Tab.0.bottom/0.0.1440.900/-1920.-70.1920.1080@0.0.1440.900" timestamp="1592938140236" />
+    <state width="1398" height="245" key="GridCell.Tab.0.bottom/0.23.1440.877/-1920.-47.1920.1057@0.23.1440.877" timestamp="1592937272330" />
+    <state width="1398" height="245" key="GridCell.Tab.0.center" timestamp="1592938140233">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="245" key="GridCell.Tab.0.center/0.0.1440.900/-1920.-47.1920.1057@0.0.1440.900" timestamp="1592938125259" />
+    <state width="1398" height="245" key="GridCell.Tab.0.center/0.0.1440.900/-1920.-70.1920.1080@0.0.1440.900" timestamp="1592938140233" />
+    <state width="1398" height="245" key="GridCell.Tab.0.center/0.23.1440.877/-1920.-47.1920.1057@0.23.1440.877" timestamp="1592937272329" />
+    <state width="1398" height="245" key="GridCell.Tab.0.left" timestamp="1592938140232">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="245" key="GridCell.Tab.0.left/0.0.1440.900/-1920.-47.1920.1057@0.0.1440.900" timestamp="1592938125258" />
+    <state width="1398" height="245" key="GridCell.Tab.0.left/0.0.1440.900/-1920.-70.1920.1080@0.0.1440.900" timestamp="1592938140232" />
+    <state width="1398" height="245" key="GridCell.Tab.0.left/0.23.1440.877/-1920.-47.1920.1057@0.23.1440.877" timestamp="1592937272328" />
+    <state width="1398" height="245" key="GridCell.Tab.0.right" timestamp="1592938140235">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="245" key="GridCell.Tab.0.right/0.0.1440.900/-1920.-47.1920.1057@0.0.1440.900" timestamp="1592938125259" />
+    <state width="1398" height="245" key="GridCell.Tab.0.right/0.0.1440.900/-1920.-70.1920.1080@0.0.1440.900" timestamp="1592938140235" />
+    <state width="1398" height="245" key="GridCell.Tab.0.right/0.23.1440.877/-1920.-47.1920.1057@0.23.1440.877" timestamp="1592937272329" />
+    <state width="1398" height="245" key="GridCell.Tab.1.bottom" timestamp="1592938140238">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="245" key="GridCell.Tab.1.bottom/0.0.1440.900/-1920.-47.1920.1057@0.0.1440.900" timestamp="1592938125263" />
+    <state width="1398" height="245" key="GridCell.Tab.1.bottom/0.0.1440.900/-1920.-70.1920.1080@0.0.1440.900" timestamp="1592938140238" />
+    <state width="1398" height="245" key="GridCell.Tab.1.bottom/0.23.1440.877/-1920.-47.1920.1057@0.23.1440.877" timestamp="1592937272332" />
+    <state width="1398" height="245" key="GridCell.Tab.1.center" timestamp="1592938140237">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="245" key="GridCell.Tab.1.center/0.0.1440.900/-1920.-47.1920.1057@0.0.1440.900" timestamp="1592938125262" />
+    <state width="1398" height="245" key="GridCell.Tab.1.center/0.0.1440.900/-1920.-70.1920.1080@0.0.1440.900" timestamp="1592938140237" />
+    <state width="1398" height="245" key="GridCell.Tab.1.center/0.23.1440.877/-1920.-47.1920.1057@0.23.1440.877" timestamp="1592937272331" />
+    <state width="1398" height="245" key="GridCell.Tab.1.left" timestamp="1592938140236">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="245" key="GridCell.Tab.1.left/0.0.1440.900/-1920.-47.1920.1057@0.0.1440.900" timestamp="1592938125261" />
+    <state width="1398" height="245" key="GridCell.Tab.1.left/0.0.1440.900/-1920.-70.1920.1080@0.0.1440.900" timestamp="1592938140236" />
+    <state width="1398" height="245" key="GridCell.Tab.1.left/0.23.1440.877/-1920.-47.1920.1057@0.23.1440.877" timestamp="1592937272330" />
+    <state width="1398" height="245" key="GridCell.Tab.1.right" timestamp="1592938140238">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="245" key="GridCell.Tab.1.right/0.0.1440.900/-1920.-47.1920.1057@0.0.1440.900" timestamp="1592938125263" />
+    <state width="1398" height="245" key="GridCell.Tab.1.right/0.0.1440.900/-1920.-70.1920.1080@0.0.1440.900" timestamp="1592938140238" />
+    <state width="1398" height="245" key="GridCell.Tab.1.right/0.23.1440.877/-1920.-47.1920.1057@0.23.1440.877" timestamp="1592937272332" />
+    <state x="208" y="31" key="SettingsEditor" timestamp="1592936125698">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="208" y="31" key="SettingsEditor/0.0.1440.900/-1920.-70.1920.1080@0.0.1440.900" timestamp="1592936125698" />
+    <state width="500" height="445" key="SwitcherDM" timestamp="1592937645325">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="500" height="445" key="SwitcherDM/0.0.1440.900/-1920.-70.1920.1080@0.0.1440.900" timestamp="1592937645325" />
     <state x="397" y="282" key="com.intellij.ide.util.TipDialog" timestamp="1592931392938">
       <screen x="0" y="0" width="1440" height="900" />
     </state>

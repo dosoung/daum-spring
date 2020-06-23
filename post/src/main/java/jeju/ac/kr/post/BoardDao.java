@@ -25,7 +25,7 @@ public class BoardDao {
     }
 
     public List<Board> getBoards() {
-        List<Board> boards = jdbcTemplate.query("select from board", new BoardRowMapper());
+        List<Board> boards = jdbcTemplate.query("select * from board", new BoardRowMapper());
         return boards;
     }
 
