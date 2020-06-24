@@ -14,7 +14,7 @@ import java.util.List;
 public class BoardService {
 
 
-    private BoardDao boardDao;
+    private final BoardDao boardDao;
 
     public BoardService(BoardDao boardDao) {
         this.boardDao = boardDao;

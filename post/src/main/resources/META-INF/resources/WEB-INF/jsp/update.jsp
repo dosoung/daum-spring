@@ -15,7 +15,7 @@
     Name: <input name="name" value="${board.name}" type="text" /> <br /> <br />
     Phone: <input name="phone" value="${board.phone}" type="text" /> <br /> <br />
     Email: <input name="email" value="${board.email}" type="text" /> <br /> <br />
-    <input value="게시글 업데이트하" type="submit" />
+    <input value="게시글 업데이트" type="submit" />
 </form>
 </body>
 </html>

@@ -70,11 +70,11 @@
                   action="<%=request.getContextPath()%>/add/user">
                 <fieldset>
                     <legend>Register !</legend>
-                    이메일: <input type="email" name="id" value="${email}" placeholder="Enter Your Email this is your ID">
+                    이메일: <input type="text" name="email" value="${email}" placeholder="Enter Your Email this is your ID">
                     <br><br>
-                    비밀번호: <input type="password" name="pwd1" value="${password}" placeholder="Enter Your Password">
+                    비밀번호: <input type="password" name="password" value="${password}" placeholder="Enter Your Password">
                     <br><br>
-                    비밀번호 확인: <input type="password" name="pwd2" value="${password}" placeholder="Enter Your Password Again">
+                    비밀번호 확인: <input type="password" name="password2" value="${password2}" placeholder="Enter Your Password Again">
                     <br><br>
                     이름: <input type="text" name="name" value="${name}" placeholder="Enter Your Name">
                     <br><br>

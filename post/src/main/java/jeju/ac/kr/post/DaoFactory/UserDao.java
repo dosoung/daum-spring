@@ -10,14 +10,19 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
-@Transactional
-@Component
+import java.nio.file.attribute.UserDefinedFileAttributeView;
+
 
 //data access object DB query db 작동 방
+@Transactional
+@Component
 public class UserDao {
 
-    @Autowired
-    private JdbcTemplate jdbcTemplate;
+    private final JdbcTemplate jdbcTemplate;
+
+    public UserDao(JdbcTemplate jdbcTemplate) {
+        this.jdbcTemplate = jdbcTemplate;
+    }
 
 
     public UserDto getUser(final int id) {
@@ -26,12 +31,10 @@ public class UserDao {
         return user;
     }
 
-    //mapper가 없는 이유는 사용하지 않고 디비에만 저장 하기 때문이다.
     public void addUser(final UserDto user) {
-        jdbcTemplate.update("insert into user(name,phone,email,password) value=(?,?,?,?) ",
-        new Object[] {user.getName(),user.getEmail(),user.getPassword(),user.getPhone()});
+        jdbcTemplate.update("insert into user(name,phone,email,password) values(?,?,?,?)",
+                new Object[] {user.getName(),user.getPhone(),user.getEmail(),user.getPassword()});
     }
-
 
     public UserDto updateUser(final UserDto user) {
         jdbcTemplate.update("update user set name=?,password=?,phone=?,email=? where id=?",new Object[]

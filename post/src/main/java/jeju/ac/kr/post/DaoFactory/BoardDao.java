@@ -16,7 +16,7 @@ import java.util.List;
 @Component
 public class BoardDao {
 
-    private JdbcTemplate jdbcTemplate;
+    private final JdbcTemplate jdbcTemplate;
 
     public BoardDao(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
@@ -36,6 +36,8 @@ public class BoardDao {
         List<BoardDto> boards = jdbcTemplate.query("select * from board", new BoardRowMapper());
         return boards;
     }
+
+
 
 
     public void updateBoard(final BoardDto board) {
