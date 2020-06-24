@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-         pageEncoding="ISO-8859-1"%>
+         pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
 <title>Spring Boot MVC and JDBC CRUD Example</title>
@@ -15,7 +15,7 @@
     Phone: <input name="phone" value="${phone}" type="text" />  <br /> <br />
     Email: <input name="email" value="${email}" type="text" />
     <br /> <br />
-    <input value="??? ????" type="submit" />
+    <input value="게시글 등록하기" type="submit" />
 </form>
 </body>
 </html>
