@@ -1,31 +1,97 @@
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<html>
-<title>Spring Boot MVC and JDBC CRUD Example</title>
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <title>Register</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        #loginer
+        {
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 1px solid #bcbcbc;
+            text-align: center;
+        }
+        #form
+        {
+            font-size: 1.3em;
+            width: 50%;
+            display: inline-block;
+        }
+        ::placeholder
+        {
+            font-size: 1.3em;
+            font-family: 'Nanum Brush Script', cursive;
+        }
+        button
+        {
+            border: 0px;
+            background-color: white;
+        }
+
+
+
+    </style>
+
+
+    <!-- 링크 색상 없애기 -->
+    <style type="text/css">
+        a:link { color: black; text-decoration: none;}
+        a:visited { color: black; text-decoration: none;}
+        a:hover { color: black; text-decoration: underline;}
+    </style>
+
+    <!-- 구글 웹 폰트 -->
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Brush+Script" rel="stylesheet">
+    <style>
+        body
+        {
+            font-family: 'Nanum Brush Script', cursive;
+        }
+    </style>
+    <!-- 웹 폰트 끝 -->
+</head>
+
+
 <body>
-<h2>Spring Boot MVC and JDBC CRUD Example</h2>
-<c:if test="${not empty message}">
-    ${message}
-</c:if>
 
-<div class="container">
-    <h2>회원가입</h2>
-    <form method="POST" name="addUser"
-          action="<%=request.getContextPath()%>/add/user">
+<div id="container">
 
-        이메일 및 아이디: <input name="email" value="${email}" type="text" />  <br /> <br />
-        비밀번호 확인: <input name="password" value="${password}" type="text" />
-        <br /> <br />
-        비밀번호: <input name="password" value="${password}" type="text" />
-        <br /> <br />
-        이름 : <input name="name" value="${name}" type="text" />
-        <br /> <br />
-        전화번호: <input name="phone" value="${phone}" type="text" /><br /> <br />
+    <!-- 로그인 폼 CSS -->
+    <div id="loginer">
+        <h1>회원가입</h1>
+        <div id="form">
+            <form method="POST" name="register"
+                  action="<%=request.getContextPath()%>/add/user">
+                <fieldset>
+                    <legend>Register !</legend>
+                    이메일: <input type="email" name="id" value="${email}" placeholder="Enter Your Email this is your ID">
+                    <br><br>
+                    비밀번호: <input type="password" name="pwd1" value="${password}" placeholder="Enter Your Password">
+                    <br><br>
+                    비밀번호 확인: <input type="password" name="pwd2" value="${password}" placeholder="Enter Your Password Again">
+                    <br><br>
+                    이름: <input type="text" name="name" value="${name}" placeholder="Enter Your Name">
+                    <br><br>
+                    전화번호: <input type="text" name="phone" value="${phone}" placeholder="Enter Your PhoneNumber">
+                    <br><br>
+                    <button type="submit"><p style="color: plum;font-size: large">Register!</p></button>
+                    <a href="<%=request.getContextPath()%>/home"><p style="color: plum;font-size: medium">Go Back!!</p></a>
+                </fieldset>
+            </form>
+        </div>
+    </div>
 
-        <input value="완료" type="submit" />
-        <input type="button" type="submit" value="돌아가기" onclick="location.href='<%=request.getContextPath()%>/home'" />
-    </form>
+    <!-- 하단 -->
+    <div id="footer">
+        <p align="center">&copy; Copyright</p>
+    </div>
 </div>
 </body>
 </html>
+
