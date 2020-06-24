@@ -15,7 +15,7 @@
     Phone: <input name="phone" value="${phone}" type="text" />  <br /> <br />
     Email: <input name="email" value="${email}" type="text" />
     <br /> <br />
-    <input value="Add Board" type="submit" />
+    <input value="??? ????" type="submit" />
 </form>
 </body>
 </html>

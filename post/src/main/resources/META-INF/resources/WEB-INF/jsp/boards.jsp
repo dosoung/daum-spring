@@ -4,14 +4,16 @@
 <html>
 <title>Spring Boot MVC and JDBC CRUD Example</title>
 <body>
-<h2>Spring Boot MVC and JDBC CRUD Example</h2>
-<a href="<%=request.getContextPath()%>/addBoard">Add</a>
+
 <c:if test="${not empty message}">
     ${message}
 </c:if>
 <c:choose>
     <c:when test="${boards != null}">
+        <div class="ADD" style="text-align: center;margin-top:100px">
+            <h2>Spring Boot MVC and JDBC CRUD Example</h2>
         <h3>List of Boards</h3>
+            <div class="table" style="margin-left:450px;">
         <table cellpadding="5" cellspacing="5">
             <thead>
             <tr>
@@ -40,6 +42,9 @@
             </c:forEach>
             </tbody>
         </table>
+        </div>
+        <a href="<%=request.getContextPath()%>/addBoard">게시글추가</a>
+        </div>
     </c:when>
     <c:otherwise>
         유저 정보가 존재하지 않습니다.
