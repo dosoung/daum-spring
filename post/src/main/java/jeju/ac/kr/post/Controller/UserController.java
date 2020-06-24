@@ -19,7 +19,7 @@ public class UserController {
         this.userService = userService;
     }
 
-    @GetMapping("/home")
+    @GetMapping("/")
     public void getHome() {
 
     }
@@ -44,7 +44,7 @@ public class UserController {
 
         userService.addUser(user);
         userModel.addAttribute("message" ,"회원가입이 완료되었습니다.");
-        return "redirect:/home";
+        return "redirect:/";
     }
 
     @PostMapping("/login")
@@ -52,19 +52,21 @@ public class UserController {
                             @RequestParam(value="password",required = true) String password, ModelMap userModel) {
         String path;
       UserDto user = userService.getUser(email);
-        System.out.println(email);
-        System.out.println(user.getPassword());
-        System.out.println(user.getPhone());
-        System.out.println(user.getEmail());
-        System.out.println(user.getName());
-      if(user.getPassword().equals(password)) {
-          userModel.addAttribute("message","로그인에 성공하였습니다.");
-          path="boards";
-      } else {
-          userModel.addAttribute("message","이메일과 비밀번호가 다릅니다.");
-          path="redirect:/home";
-      }
+        System.out.println("*********************************"+user);
+
+        if(user == null) {
+            System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+            userModel.addAttribute("message","회원정보가 없습니다.");
+            path="redirect:/";
+        } else if (user.getPassword().equals(password)) {
+            userModel.addAttribute("message","로그인에 성공하였습니다.");
+            path="redirect:/boards";
+        } else {
+            userModel.addAttribute("message","이메일과 비밀번호가 다릅니다.");
+            path="redirect:/";
+        }
         System.out.println(path);
-      return path;
+        return path;
     }
+
 }

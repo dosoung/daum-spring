@@ -6,6 +6,7 @@ import jeju.ac.kr.post.Domain.UserDto;
 import jeju.ac.kr.post.Mapper.BoardRowMapper;
 import jeju.ac.kr.post.Mapper.UserRowMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
@@ -26,8 +27,16 @@ public class UserDao {
 
 
     public UserDto getUser(final String email) {
-        UserDto user = jdbcTemplate.queryForObject("select * from user where email=?", new Object[] {email},
-                new UserRowMapper());
+
+        UserDto user = null;
+        try {
+            user = jdbcTemplate.queryForObject("select * from user where email=?", new Object[] {email},
+                    new UserRowMapper());
+        } catch (DataAccessException e) {
+            e.printStackTrace();
+            System.out.println("*****************************");
+            System.out.println("**************************"+e);
+        }
         return user;
     }
 
