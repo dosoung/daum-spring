@@ -18,4 +18,9 @@ public class UserController {
     public void getHome() {
 
     }
+
+    @GetMapping("/register")
+    public void getRegister() {
+
+    }
 }
