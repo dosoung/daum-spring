@@ -25,8 +25,8 @@ public class UserDao {
     }
 
 
-    public UserDto getUser(final int id) {
-        UserDto user = jdbcTemplate.queryForObject("select * from user where id=?", new Object[] {id},
+    public UserDto getUser(final String email) {
+        UserDto user = jdbcTemplate.queryForObject("select * from user where email=?", new Object[] {email},
                 new UserRowMapper());
         return user;
     }
@@ -38,7 +38,7 @@ public class UserDao {
 
     public UserDto updateUser(final UserDto user) {
         jdbcTemplate.update("update user set name=?,password=?,phone=?,email=? where id=?",new Object[]
-                {user.getName(),user.getPassword(),user.getPhone(),user.getPhone()});
+                {user.getName(),user.getPassword(),user.getPhone(),user.getEmail()});
         return user;
     }
 

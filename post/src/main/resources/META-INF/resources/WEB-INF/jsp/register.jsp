@@ -80,8 +80,8 @@
                     <br><br>
                     전화번호: <input type="text" name="phone" value="${phone}" placeholder="Enter Your PhoneNumber">
                     <br><br>
-                    <button type="submit"><p style="color: plum;font-size: large">Register!</p></button>
-                    <a href="<%=request.getContextPath()%>/home"><p style="color: plum;font-size: medium">Go Back!!</p></a>
+                    <button type="submit"><p style="color: plum;font-size: large">회원가입</p></button></br>
+                    <a href="<%=request.getContextPath()%>/home">Go Back!!</a>
                 </fieldset>
             </form>
         </div>

@@ -64,17 +64,21 @@
     <!-- 로그인 폼 CSS -->
     <div id="loginer">
         <h1>Main</h1>
+        <c:if test="${not empty message}">
+            ${meesage}
+        </c:if>
         <div id="form">
             <form method="POST" name="login"
                   action="<%=request.getContextPath()%>/login">
                 <fieldset>
                     <legend>LOGIN !</legend>
-                    이메일: <input type="text" name="id" value="${email}" placeholder="Enter Your Email">
+<%--                    name이 requestparam으로 넘어간다. 따라서 name과 controller의 파라미터 이름이 같아야함--%>
+                    이메일: <input type="text" name="email" value="${email}" placeholder="Enter Your Email">
                     <br><br>
-                    비밀번호: <input type="password" name="pwd1" value="${password}" placeholder="Enter Your Password">
+                    비밀번호: <input type="password" name="password" value="${password}" placeholder="Enter Your Password">
                     <br><br>
-                    <button type="submit"></button>
-                    You Don't Have Your Account?<a href="<%=request.getContextPath()%>/register"><p style="color: plum">  Click here!!</p></a>
+                    <button type="submit"><p style="color: plum;font-size: large">로그인</p></button></br>
+                    You Don't Have Your Account?<a href="<%=request.getContextPath()%>/register">  Click here!!</a>
                 </fieldset>
             </form>
         </div>

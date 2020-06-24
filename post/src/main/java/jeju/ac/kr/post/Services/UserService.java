@@ -16,8 +16,8 @@ public class UserService {
         this.userDao = userDao;
     }
 
-    public UserDto getUser(final int id ) {
-        return userDao.getUser(id);
+    public UserDto getUser(final String email) {
+        return userDao.getUser(email);
     }
 
     public void addUser(final UserDto user) {

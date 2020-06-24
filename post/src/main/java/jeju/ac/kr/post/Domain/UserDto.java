@@ -21,7 +21,7 @@ public class UserDto {
 
     }
 
-    public UserDto(int id, String name, String email, String phone, String password) {
+    public UserDto(int id, String name,  String phone, String email, String password) {
         this.id = id;
         this.name = name;
         this.phone = phone;

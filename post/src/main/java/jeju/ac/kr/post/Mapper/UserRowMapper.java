@@ -13,9 +13,9 @@ public class UserRowMapper implements RowMapper<UserDto> {
     public UserDto mapRow(ResultSet rs, int rowNum) throws SQLException {
         return new UserDto(rs.getInt("id"),
                 rs.getString("name"),
-                rs.getString("password"),
                 rs.getString("phone"),
-                rs.getString("email"));
+                rs.getString("email"),
+                rs.getString("password"));
     }
 }
 

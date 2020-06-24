@@ -48,5 +48,23 @@ public class UserController {
     }
 
     @PostMapping("/login")
-    public String loginUser(@RequestParam)
+    public String loginUser(@RequestParam(value="email",required = true) String email,
+                            @RequestParam(value="password",required = true) String password, ModelMap userModel) {
+        String path;
+      UserDto user = userService.getUser(email);
+        System.out.println(email);
+        System.out.println(user.getPassword());
+        System.out.println(user.getPhone());
+        System.out.println(user.getEmail());
+        System.out.println(user.getName());
+      if(user.getPassword().equals(password)) {
+          userModel.addAttribute("message","로그인에 성공하였습니다.");
+          path="boards";
+      } else {
+          userModel.addAttribute("message","이메일과 비밀번호가 다릅니다.");
+          path="redirect:/home";
+      }
+        System.out.println(path);
+      return path;
+    }
 }

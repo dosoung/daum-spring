@@ -6,7 +6,7 @@
 <body>
 <h2>Spring Boot MVC and JDBC CRUD Example</h2>
 <c:if test="${not empty message}">
-    ${meesage}
+    ${message}
 </c:if>
 <h3>게시글 업데이트</h3>
 <form method="POST" name="update_board"
