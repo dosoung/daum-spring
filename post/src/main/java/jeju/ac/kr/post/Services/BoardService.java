@@ -14,8 +14,11 @@ import java.util.List;
 public class BoardService {
 
 
-    @Autowired
     private BoardDao boardDao;
+
+    public BoardService(BoardDao boardDao) {
+        this.boardDao = boardDao;
+    }
 
     public BoardDto getBoard(final int id) {
         return boardDao.getBoard(id);

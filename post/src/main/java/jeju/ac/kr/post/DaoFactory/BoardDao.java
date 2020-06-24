@@ -16,9 +16,16 @@ import java.util.List;
 @Component
 public class BoardDao {
 
-    @Autowired
     private JdbcTemplate jdbcTemplate;
 
+    public BoardDao(JdbcTemplate jdbcTemplate) {
+        this.jdbcTemplate = jdbcTemplate;
+    }
+
+    //BoardDto타입으로 함수를 반환한다.
+    //쿼리문을 실행하고 new object를 생성 하는데 여기까지가 우리가 기억하는 resultSet이다.
+    // 이 resultSet은 아직 의미가 없는 객체이다. 어떻게 사용할지에 대해서 우리가 의미를 부여하는데
+    //그것이 BoardRowMapper를 통해서 의미를 부여하는 것이다.
     public BoardDto getBoard(final int id) {
         BoardDto board = jdbcTemplate.queryForObject("select * from board where id=?", new Object[] {id},
                 new BoardRowMapper());

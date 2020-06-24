@@ -12,6 +12,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Transactional
 @Component
+
+//data access object DB query db 작동 방
 public class UserDao {
 
     @Autowired
@@ -24,10 +26,12 @@ public class UserDao {
         return user;
     }
 
-    public void insertUser(final UserDto user) {
+    //mapper가 없는 이유는 사용하지 않고 디비에만 저장 하기 때문이다.
+    public void addUser(final UserDto user) {
         jdbcTemplate.update("insert into user(name,phone,email,password) value=(?,?,?,?) ",
         new Object[] {user.getName(),user.getEmail(),user.getPassword(),user.getPhone()});
     }
+
 
     public UserDto updateUser(final UserDto user) {
         jdbcTemplate.update("update user set name=?,password=?,phone=?,email=? where id=?",new Object[]

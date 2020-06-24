@@ -1,4 +1,4 @@
-package jeju.ac.kr.post;
+package jeju.ac.kr.post.Controller;
 
 import jeju.ac.kr.post.Domain.BoardDto;
 import jeju.ac.kr.post.Services.BoardService;
@@ -12,8 +12,11 @@ import java.util.List;
 @Controller
 public class BoardController {
 
-    @Autowired
     private BoardService boardService;
+
+    public BoardController(BoardService boardService) {
+        this.boardService = boardService;
+    }
 
     @GetMapping("/board/{id}")
     public String getBoard(@PathVariable int id, ModelMap boardModel) {

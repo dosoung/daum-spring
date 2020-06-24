@@ -6,6 +6,7 @@ import org.springframework.jdbc.core.RowMapper;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+//유저 정보 매핑
 public class UserRowMapper implements RowMapper<UserDto> {
 
     @Override

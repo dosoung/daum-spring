@@ -4,8 +4,9 @@ package jeju.ac.kr.post.Domain;
 import lombok.Getter;
 import lombok.Setter;
 
-@Getter
 @Setter
+@Getter
+//board 값 가져오기 및 생성자로 초기
 public class BoardDto {
 
     private int id;
