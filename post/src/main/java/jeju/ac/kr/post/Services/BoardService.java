@@ -1,4 +1,4 @@
-package jeju.ac.kr.post;
+package jeju.ac.kr.post.Services;
 
 
 import jeju.ac.kr.post.DaoFactory.BoardDao;

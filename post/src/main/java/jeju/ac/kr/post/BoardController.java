@@ -1,6 +1,7 @@
 package jeju.ac.kr.post;
 
 import jeju.ac.kr.post.Domain.BoardDto;
+import jeju.ac.kr.post.Services.BoardService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;

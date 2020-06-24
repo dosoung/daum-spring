@@ -1,7 +1,7 @@
 package jeju.ac.kr.post.DaoFactory;
 
 import jeju.ac.kr.post.Domain.BoardDto;
-import jeju.ac.kr.post.BoardRowMapper;
+import jeju.ac.kr.post.Mapper.BoardRowMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
@@ -30,14 +30,15 @@ public class BoardDao {
         return boards;
     }
 
-    public void addBoard(final BoardDto board) {
-        jdbcTemplate.update("insert into board(name,phone,email) values(?,?,?)",
-                new Object[] {board.getName(),board.getPhone(),board.getEmail()});
-    }
 
     public void updateBoard(final BoardDto board) {
         jdbcTemplate.update("update board set name = ?, phone = ?, email=? where id = ?",
                 new Object[] { board.getName(), board.getPhone(),board.getEmail(), board.getId() });
+    }
+
+    public void addBoard(final BoardDto board) {
+        jdbcTemplate.update("insert into board(name,phone,email) values(?,?,?)",
+                new Object[] {board.getName(),board.getPhone(),board.getEmail()});
     }
 
 
