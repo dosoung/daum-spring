@@ -6,9 +6,8 @@ import jeju.ac.kr.post.Services.UserService;
 import org.apache.catalina.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class UserController {
@@ -52,21 +51,35 @@ public class UserController {
                             @RequestParam(value="password",required = true) String password, ModelMap userModel) {
         String path;
       UserDto user = userService.getUser(email);
-        System.out.println("*********************************"+user);
 
+
+      //유저정보가 없을시 다시 홈화면
         if(user == null) {
-            System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
             userModel.addAttribute("message","회원정보가 없습니다.");
             path="redirect:/";
+            //비밀번호가 일치할시 로그인
         } else if (user.getPassword().equals(password)) {
             userModel.addAttribute("message","로그인에 성공하였습니다.");
             path="redirect:/boards";
+            //비밀번호가 다를시 다시 홈화면
         } else {
             userModel.addAttribute("message","이메일과 비밀번호가 다릅니다.");
             path="redirect:/";
         }
-        System.out.println(path);
         return path;
     }
+
+//    @RequestMapping("/exception")
+//    public void exception() {
+//        throw new RuntimeException("에러입니다.");
+//    }
+//
+//    @ExceptionHandler(Exception.class)
+//    public ModelAndView error(Exception e) {
+//        System.out.println();
+//        ModelAndView modelAndView = new ModelAndView("error");
+//        modelAndView.addObject("e",e)
+//        return modelAndView;
+//    }
 
 }
