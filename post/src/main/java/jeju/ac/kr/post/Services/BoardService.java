@@ -29,7 +29,17 @@ public class BoardService {
     }
 
     public void addBoard(final BoardDto board) {
+
         boardDao.addBoard(board);
+    }
+
+    public BoardDto setBoard(String name, String phone, String email) {
+        BoardDto board = new BoardDto();
+        board.setName(name);
+        board.setEmail(email);
+        board.setPhone(phone);
+
+        return board;
     }
 
     public void updateBoard(final BoardDto board) {

@@ -9,7 +9,6 @@ import org.springframework.stereotype.Service;
 @Service
 public class UserService {
 
-    @Autowired
     private final UserDao userDao;
 
     public UserService(UserDao userDao) {
@@ -21,6 +20,7 @@ public class UserService {
     }
 
     public void addUser(final UserDto user) {
-        userDao.addUser(user);
+        userDao.addUser(user
+        );
     }
 }

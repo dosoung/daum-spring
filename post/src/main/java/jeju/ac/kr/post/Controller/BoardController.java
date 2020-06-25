@@ -43,14 +43,10 @@ public class BoardController {
     public String addBoard(@RequestParam(value="name",required=true) String name,
                            @RequestParam(value="phone",required=true) String phone,
                            @RequestParam(value="email",required=true) String email, ModelMap boardModel) {
-
-        BoardDto board = new BoardDto();
-        board.setName(name);
-        board.setPhone(phone);
-        board.setEmail(email);
+        BoardDto board = boardService.setBoard(name,phone,email);
         boardService.addBoard(board);
         boardModel.addAttribute("message","게시글 등록이 완료 되었습니다.");
-        List<BoardDto> boards = boardService.getBoards();
+//        List<BoardDto> boards = boardService.getBoards();
         return "redirect:/boards";
     }
 
