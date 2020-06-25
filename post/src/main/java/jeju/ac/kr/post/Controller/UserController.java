@@ -44,24 +44,24 @@ public class UserController {
     @PostMapping("/login")
     public String loginUser(@RequestParam(value="email",required = true) String email,
                             @RequestParam(value="password",required = true) String password, ModelMap userModel) {
-        String path;
-      UserDto user = userService.getUser(email);
 
-
-      //유저정보가 없을시 다시 홈화면
+        UserDto user = userService.getUser(email);
         if(user == null) {
-            userModel.addAttribute("message","회원정보가 없습니다.");
-            path="redirect:/";
-            //비밀번호가 일치할시 로그인
-        } else if (user.getPassword().equals(password)) {
-            userModel.addAttribute("message","로그인에 성공하였습니다.");
+            userModel.addAttribute("message", "회원정보가 없습니다.");
+            return "redirect:/";
+        }
+        //비밀번호가 일치할시 로그인
+
+        String path;
+        Boolean aBoolean = userService.matchPW(email,password);
+        if(aBoolean) {
             path="redirect:/boards";
-            //비밀번호가 다를시 다시 홈화면
         } else {
-            userModel.addAttribute("message","이메일과 비밀번호가 다릅니다.");
             path="redirect:/";
         }
+
         return path;
+
     }
 
 //    @RequestMapping("/exception")

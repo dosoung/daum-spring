@@ -70,6 +70,7 @@
         <div id="form">
             <form method="POST" name="login"
                   action="<%=request.getContextPath()%>/login">
+                <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
                 <fieldset>
                     <legend>LOGIN !</legend>
 <%--                    name이 requestparam으로 넘어간다. 따라서 name과 controller의 파라미터 이름이 같아야함--%>

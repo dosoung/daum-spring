@@ -17,13 +17,26 @@ public class UserService {
         this.passwordEncoder = passwordEncoder;
     }
 
+    public boolean matchPW(final String email, final String password) {
+        UserDto user = userDao.getUser(email);
+
+        System.out.println(user.getPassword());
+        System.out.println(password);
+        String bcryptPw = user.getPassword();
+
+        //앞에가 받아온 비밀번호 뒤에가 인크립트 비밀번호
+        boolean isPasswordMatch = passwordEncoder.matches(password,bcryptPw);
+        System.out.println("++++++++++++++++++++++++++++++++++++"+isPasswordMatch);
+        return isPasswordMatch;
+    }
+
     public UserDto getUser(final String email) {
-        return userDao.getUser(email);
+        UserDto user = userDao.getUser(email);
+        return user;
     }
 
     public UserDto setUser(String name,String phone, String email, String password) {
         password = passwordEncoder.encode(password);
-        System.out.println("너뭐냐!!!!!!!!!!!!!!!!!!!!"+password);
         return userDao.setUser(name,phone,email,password);
     }
 
