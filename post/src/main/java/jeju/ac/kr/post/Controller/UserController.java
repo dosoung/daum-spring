@@ -34,13 +34,8 @@ public class UserController {
                           @RequestParam(value="email",required = true) String email,
                           @RequestParam(value="password",required = true) String password, ModelMap userModel) {
 
-        System.out.println(email);
-        UserDto user = new UserDto();
-        user.setName(name);
-        user.setEmail(email);
-        user.setPassword(password);
-        user.setPhone(phone);
-
+        UserDto user = userService.setUser(name,phone,email,password);
+        System.out.println(user.getEmail());
         userService.addUser(user);
         userModel.addAttribute("message" ,"회원가입이 완료되었습니다.");
         return "redirect:/";

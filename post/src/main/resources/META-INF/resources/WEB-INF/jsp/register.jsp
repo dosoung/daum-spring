@@ -68,6 +68,7 @@
         <div id="form">
             <form method="POST" name="register"
                   action="<%=request.getContextPath()%>/add/user">
+                <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
                 <fieldset>
                     <legend>Register !</legend>
                     이메일: <input type="text" name="email" value="${email}" placeholder="Enter Your Email this is your ID">

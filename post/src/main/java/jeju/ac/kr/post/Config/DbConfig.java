@@ -1,4 +1,4 @@
-package jeju.ac.kr.post;
+package jeju.ac.kr.post.Config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;

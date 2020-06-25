@@ -7,7 +7,6 @@ import lombok.Setter;
 
 @Getter
 @Setter
-
 //user값 가져오기 및 생성자 초기화
 public class UserDto {
 
