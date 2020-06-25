@@ -45,10 +45,21 @@ public class BoardDao {
                 new Object[] { board.getName(), board.getPhone(),board.getEmail(), board.getId() });
     }
 
+
+
+    public BoardDto setBoard(String name, String phone, String email) {
+        BoardDto board = new BoardDto();
+        board.setName(name);
+        board.setEmail(email);
+        board.setPhone(phone);
+        return board;
+    }
+
     public void addBoard(final BoardDto board) {
         jdbcTemplate.update("insert into board(name,phone,email) values(?,?,?)",
                 new Object[] {board.getName(),board.getPhone(),board.getEmail()});
     }
+
 
 
 

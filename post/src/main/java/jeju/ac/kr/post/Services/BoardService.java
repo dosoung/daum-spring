@@ -28,19 +28,15 @@ public class BoardService {
         return boardDao.getBoards();
     }
 
-    public void addBoard(final BoardDto board) {
+    public BoardDto setBoard(String name, String phone, String email) {
+        return boardDao.setBoard(name, phone, email);
+    }
 
+    public void addBoard(final BoardDto board) {
         boardDao.addBoard(board);
     }
 
-    public BoardDto setBoard(String name, String phone, String email) {
-        BoardDto board = new BoardDto();
-        board.setName(name);
-        board.setEmail(email);
-        board.setPhone(phone);
 
-        return board;
-    }
 
     public void updateBoard(final BoardDto board) {
         boardDao.updateBoard(board);
