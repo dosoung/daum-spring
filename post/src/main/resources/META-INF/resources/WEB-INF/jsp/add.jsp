@@ -11,6 +11,7 @@
 <h3>Add User</h3>
 <form method="POST" name="add_board"
       action="<%=request.getContextPath()%>/add/board">
+    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
     Name: <input name="name" value="${name}" type="text" /> <br /> <br />
     Phone: <input name="phone" value="${phone}" type="text" />  <br /> <br />
     Email: <input name="email" value="${email}" type="text" />
