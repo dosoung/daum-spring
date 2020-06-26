@@ -1,6 +1,7 @@
 package jeju.ac.kr.post.Services;
 
 
+import com.mysql.cj.x.protobuf.Mysqlx;
 import jeju.ac.kr.post.DaoFactory.UserDao;
 import jeju.ac.kr.post.Domain.UserDto;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -27,6 +28,7 @@ public class UserService {
 
     @Transactional
     public UserDto setUser(String name,String phone, String email, String password) {
+
         password = passwordEncoder.encode(password);
         return userDao.setUser(name,phone,email,password);
     }

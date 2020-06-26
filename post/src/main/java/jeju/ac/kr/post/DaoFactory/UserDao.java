@@ -46,8 +46,12 @@ public class UserDao {
     }
 
     public void addUser(final UserDto user) {
-        jdbcTemplate.update("insert into user(name,phone,email,password) values(?,?,?,?)",
-                new Object[] {user.getName(),user.getPhone(),user.getEmail(),user.getPassword()});
+        try {
+            jdbcTemplate.update("insert into user(name,phone,email,password) values(?,?,?,?)",
+                    new Object[] {user.getName(),user.getPhone(),user.getEmail(),user.getPassword()});
+        } catch (DataAccessException e) {
+            System.out.println("***********************"+e+"***********************");
+        }
     }
 
     public UserDto updateUser(final UserDto user) {

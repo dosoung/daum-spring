@@ -66,6 +66,9 @@
     <div id="loginer">
         <h1>회원가입</h1>
         <div id="form">
+            <c:if test ="${msg == false}" >
+                <p style="color: cornflowerblue ">빈 칸 없이 모든 정보를 입력 해주세요</p>
+            </c:if>
             <form method="POST" name="register"
                   action="<%=request.getContextPath()%>/add/user">
                 <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
@@ -81,10 +84,12 @@
                     <br><br>
                     전화번호: <input type="text" name="phone" value="${phone}" placeholder="Enter Your PhoneNumber">
                     <br><br>
-                    <button type="submit"><p style="color: plum;font-size: large">회원가입</p></button></br>
+                    <button type="submit"><p style="color: cornflowerblue ;font-size: large">회원가입</p></button></br>
                     <a href="<%=request.getContextPath()%>/">Go Back!!</a>
                 </fieldset>
             </form>
+
+
         </div>
     </div>
 
