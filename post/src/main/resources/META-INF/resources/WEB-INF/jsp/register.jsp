@@ -72,6 +72,10 @@
             <c:if test ="${msg == 1}" >
                 <p style="color: cornflowerblue ">비밀번호가 일치하지 않습니다.</p>
             </c:if>
+
+            <c:if test ="${msg == 2}" >
+                <p style="color: cornflowerblue ">이미 등록되어있는 이메일 입니다.</p>
+            </c:if>
             <form method="POST" name="register"
                   action="<%=request.getContextPath()%>/add/user">
                 <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>

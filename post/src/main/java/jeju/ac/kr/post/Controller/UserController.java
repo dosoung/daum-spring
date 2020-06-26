@@ -47,7 +47,13 @@ public class UserController {
             return "redirect:/register";
         }
             UserDto user = userService.setUser(name, phone, email, password);
-            userService.addUser(user);
+            boolean error =  userService.addUser(user);
+
+            if(error==true) {
+                rttr.addFlashAttribute("msg",2);
+                return "redirect:/register";
+            }
+
             rttr.addFlashAttribute("msg", true);
             return "redirect:/";
 
