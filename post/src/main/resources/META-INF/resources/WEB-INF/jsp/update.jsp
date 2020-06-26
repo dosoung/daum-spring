@@ -11,6 +11,7 @@
 <h3>게시글 업데이트</h3>
 <form method="POST" name="update_board"
       action="<%=request.getContextPath()%>/update/board">
+    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
     <input hidden="hidden" name="id" value="${id}" type="text" />
     Name: <input name="name" value="${board.name}" type="text" /> <br /> <br />
     Phone: <input name="phone" value="${board.phone}" type="text" /> <br /> <br />
