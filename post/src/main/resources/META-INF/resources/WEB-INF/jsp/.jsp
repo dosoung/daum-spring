@@ -72,6 +72,10 @@
             <c:if test ="${msg == true}" >
                 <p style="color: cornflowerblue">회원가입이 성공하였습니다. 로그인 해주세요~</p>
             </c:if>
+            <c:if test ="${msg == false}" >
+                <p style="color: cornflowerblue">로그인에 실패하였습니다. 아이디 또는 패스워드를 확인 해주세요</p>
+            </c:if>
+
             <form method="POST" name="login"
                   action="<%=request.getContextPath()%>/login">
                 <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
@@ -86,9 +90,6 @@
                     You Don't Have Your Account?<a href="<%=request.getContextPath()%>/register">회원가입</a>
                 </fieldset>
             </form>
-            <c:if test ="${msg == false}" >
-                <p style="color: cornflowerblue">로그인에 실패하였습니다. 아이디 또는 패스워드를 확인 해주세요</p>
-           </c:if>
 
         </div>
     </div>

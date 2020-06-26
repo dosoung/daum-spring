@@ -36,10 +36,9 @@ public class UserService {
     @Transactional
     public boolean addUser(final UserDto user) {
         boolean error;
-        System.out.println("asdfasdfsdfsadfdsfadsfsdfdsf"+userDao.getUser(user.getEmail()));
         UserDto alreadyUser = userDao.getUser(user.getEmail());
-        System.out.println(alreadyUser+"******************************");
-        if(alreadyUser != null) {
+
+        if(alreadyUser == null) {
             userDao.addUser(user);
             error =false;
         } else {

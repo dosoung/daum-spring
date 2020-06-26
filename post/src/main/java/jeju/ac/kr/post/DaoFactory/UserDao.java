@@ -23,16 +23,14 @@ public class UserDao {
 
     public UserDto getUser(final String email) {
 
-        UserDto user = null;
+        UserDto alreadyUser = null;
         try {
-            user = jdbcTemplate.queryForObject("select * from user where email=?", new Object[] {email},
+            alreadyUser = jdbcTemplate.queryForObject("select * from user where email=?", new Object[] {email},
                     new UserRowMapper());
         } catch (DataAccessException e) {
             e.printStackTrace();
-            System.out.println("*****************************");
-            System.out.println("**************************"+e);
         }
-        return user;
+        return alreadyUser;
     }
 
     public UserDto setUser(String name, String phone, String email, String password) {
@@ -50,7 +48,6 @@ public class UserDao {
             jdbcTemplate.update("insert into user(name,phone,email,password) values(?,?,?,?)",
                     new Object[] {user.getName(),user.getPhone(),user.getEmail(),user.getPassword()});
         } catch (DataAccessException e) {
-            System.out.println("***********************"+e+"***********************");
         }
     }
 

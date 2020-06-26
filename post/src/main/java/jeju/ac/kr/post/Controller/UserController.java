@@ -39,6 +39,7 @@ public class UserController {
                           @RequestParam(value="password",required = true) String password,
                           @RequestParam(value="password2",required = true) String password2,
                           RedirectAttributes rttr) {
+
         if(name.equals("") || phone.equals("")|| email.equals("") || password.equals("") ||password2.equals("")) {
             rttr.addFlashAttribute("msg",0);
             return "redirect:/register";
