@@ -63,7 +63,7 @@
 <c:if test="${member ==null}">
     <!-- 로그인 폼 CSS -->
     <div id="loginer">
-        <h1>Main</h1>
+        <h1>스프링</h1>
         <c:if test="${not empty message}">
             ${meesage}
         </c:if>
@@ -83,12 +83,12 @@
                     비밀번호: <input type="password" name="password" value="${password}" placeholder="Enter Your Password">
                     <br><br>
                     <button type="submit"><p style="color: cornflowerblue;font-size: large">로그인</p></button></br>
-                    You Don't Have Your Account?<a href="<%=request.getContextPath()%>/register">  Click here!!</a>
+                    You Don't Have Your Account?<a href="<%=request.getContextPath()%>/register">회원가입</a>
                 </fieldset>
             </form>
             <c:if test ="${msg == false}" >
                 <p style="color: cornflowerblue">로그인에 실패하였습니다. 아이디 또는 패스워드를 확인 해주세요</p>
-            </c:if>
+           </c:if>
 
         </div>
     </div>

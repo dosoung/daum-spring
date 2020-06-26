@@ -36,9 +36,14 @@ public class UserController {
     public String addUser(@RequestParam(value="name",required = true) String name,
                           @RequestParam(value="phone",required = true) String phone,
                           @RequestParam(value="email",required = true) String email,
-                          @RequestParam(value="password",required = true) String password, RedirectAttributes rttr) {
-        if(name.equals("") || phone.equals("")|| email.equals("") || password.equals("")) {
-            rttr.addFlashAttribute("msg",false);
+                          @RequestParam(value="password",required = true) String password,
+                          @RequestParam(value="password2",required = true) String password2,
+                          RedirectAttributes rttr) {
+        if(name.equals("") || phone.equals("")|| email.equals("") || password.equals("") ||password2.equals("")) {
+            rttr.addFlashAttribute("msg",0);
+            return "redirect:/register";
+        } else if(!password.equals(password2)) {
+            rttr.addFlashAttribute("msg",1);
             return "redirect:/register";
         }
             UserDto user = userService.setUser(name, phone, email, password);
@@ -60,6 +65,7 @@ public class UserController {
         }
         //비밀번호가 일치할시 로그인
         String path;
+
         Boolean aBoolean = userService.matchPW(email,password);
         if(aBoolean) {
             session.setAttribute("member",user);

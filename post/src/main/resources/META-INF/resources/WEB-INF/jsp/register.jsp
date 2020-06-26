@@ -66,8 +66,11 @@
     <div id="loginer">
         <h1>회원가입</h1>
         <div id="form">
-            <c:if test ="${msg == false}" >
+            <c:if test ="${msg == 0}" >
                 <p style="color: cornflowerblue ">빈 칸 없이 모든 정보를 입력 해주세요</p>
+            </c:if>
+            <c:if test ="${msg == 1}" >
+                <p style="color: cornflowerblue ">비밀번호가 일치하지 않습니다.</p>
             </c:if>
             <form method="POST" name="register"
                   action="<%=request.getContextPath()%>/add/user">
