@@ -60,7 +60,7 @@
 <body>
 
 <div id="container">
-
+<c:if test="${member ==null}">
     <!-- 로그인 폼 CSS -->
     <div id="loginer">
         <h1>Main</h1>
@@ -84,6 +84,7 @@
             </form>
         </div>
     </div>
+</c:if>
 
     <!-- 하단 -->
     <div id="footer">
