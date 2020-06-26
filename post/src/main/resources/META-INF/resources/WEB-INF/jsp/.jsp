@@ -60,16 +60,25 @@
 <body>
 
 <div id="container">
-
+<c:if test="${member ==null}">
     <!-- 로그인 폼 CSS -->
     <div id="loginer">
-        <h1>Main</h1>
+        <h1>스프링</h1>
         <c:if test="${not empty message}">
             ${meesage}
         </c:if>
         <div id="form">
+
+            <c:if test ="${msg == true}" >
+                <p style="color: cornflowerblue">회원가입이 성공하였습니다. 로그인 해주세요~</p>
+            </c:if>
+            <c:if test ="${msg == false}" >
+                <p style="color: cornflowerblue">로그인에 실패하였습니다. 아이디 또는 패스워드를 확인 해주세요</p>
+            </c:if>
+
             <form method="POST" name="login"
                   action="<%=request.getContextPath()%>/login">
+                <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
                 <fieldset>
                     <legend>LOGIN !</legend>
 <%--                    name이 requestparam으로 넘어간다. 따라서 name과 controller의 파라미터 이름이 같아야함--%>
@@ -77,12 +86,14 @@
                     <br><br>
                     비밀번호: <input type="password" name="password" value="${password}" placeholder="Enter Your Password">
                     <br><br>
-                    <button type="submit"><p style="color: plum;font-size: large">로그인</p></button></br>
-                    You Don't Have Your Account?<a href="<%=request.getContextPath()%>/register">  Click here!!</a>
+                    <button type="submit"><p style="color: cornflowerblue;font-size: large">로그인</p></button></br>
+                    You Don't Have Your Account?<a href="<%=request.getContextPath()%>/register">회원가입</a>
                 </fieldset>
             </form>
+
         </div>
     </div>
+</c:if>
 
     <!-- 하단 -->
     <div id="footer">

@@ -8,6 +8,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 @Controller
 public class UserController {
@@ -32,41 +36,55 @@ public class UserController {
     public String addUser(@RequestParam(value="name",required = true) String name,
                           @RequestParam(value="phone",required = true) String phone,
                           @RequestParam(value="email",required = true) String email,
-                          @RequestParam(value="password",required = true) String password, ModelMap userModel) {
+                          @RequestParam(value="password",required = true) String password,
+                          @RequestParam(value="password2",required = true) String password2,
+                          RedirectAttributes rttr) {
 
-        System.out.println(email);
-        UserDto user = new UserDto();
-        user.setName(name);
-        user.setEmail(email);
-        user.setPassword(password);
-        user.setPhone(phone);
+        if(name.equals("") || phone.equals("")|| email.equals("") || password.equals("") ||password2.equals("")) {
+            rttr.addFlashAttribute("msg",0);
+            return "redirect:/register";
+        } else if(!password.equals(password2)) {
+            rttr.addFlashAttribute("msg",1);
+            return "redirect:/register";
+        }
+            UserDto user = userService.setUser(name, phone, email, password);
+            boolean error =  userService.addUser(user);
 
-        userService.addUser(user);
-        userModel.addAttribute("message" ,"회원가입이 완료되었습니다.");
-        return "redirect:/";
+            if(error==true) {
+                rttr.addFlashAttribute("msg",2);
+                return "redirect:/register";
+            }
+
+            rttr.addFlashAttribute("msg", true);
+            return "redirect:/";
+
     }
 
     @PostMapping("/login")
     public String loginUser(@RequestParam(value="email",required = true) String email,
-                            @RequestParam(value="password",required = true) String password, ModelMap userModel) {
-        String path;
-      UserDto user = userService.getUser(email);
-
-
-      //유저정보가 없을시 다시 홈화면
+                            @RequestParam(value="password",required = true) String password,
+                            RedirectAttributes rttr, HttpServletRequest request) {
+        HttpSession session = request.getSession();
+        UserDto user = userService.getUser(email);
         if(user == null) {
-            userModel.addAttribute("message","회원정보가 없습니다.");
-            path="redirect:/";
-            //비밀번호가 일치할시 로그인
-        } else if (user.getPassword().equals(password)) {
-            userModel.addAttribute("message","로그인에 성공하였습니다.");
+            rttr.addFlashAttribute("msg",false);
+            return "redirect:/";
+        }
+        //비밀번호가 일치할시 로그인
+        String path;
+
+        Boolean aBoolean = userService.matchPW(email,password);
+        if(aBoolean) {
+            session.setAttribute("member",user);
             path="redirect:/boards";
-            //비밀번호가 다를시 다시 홈화면
         } else {
-            userModel.addAttribute("message","이메일과 비밀번호가 다릅니다.");
+            rttr.addFlashAttribute("msg",false);
+            session.setAttribute("member",null);
             path="redirect:/";
         }
+
         return path;
+
     }
 
 //    @RequestMapping("/exception")

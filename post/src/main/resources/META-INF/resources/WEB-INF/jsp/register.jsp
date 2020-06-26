@@ -66,8 +66,19 @@
     <div id="loginer">
         <h1>회원가입</h1>
         <div id="form">
+            <c:if test ="${msg == 0}" >
+                <p style="color: cornflowerblue ">빈 칸 없이 모든 정보를 입력 해주세요</p>
+            </c:if>
+            <c:if test ="${msg == 1}" >
+                <p style="color: cornflowerblue ">비밀번호가 일치하지 않습니다.</p>
+            </c:if>
+
+            <c:if test ="${msg == 2}" >
+                <p style="color: cornflowerblue ">이미 등록되어있는 이메일 입니다.</p>
+            </c:if>
             <form method="POST" name="register"
                   action="<%=request.getContextPath()%>/add/user">
+                <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
                 <fieldset>
                     <legend>Register !</legend>
                     이메일: <input type="text" name="email" value="${email}" placeholder="Enter Your Email this is your ID">
@@ -80,10 +91,12 @@
                     <br><br>
                     전화번호: <input type="text" name="phone" value="${phone}" placeholder="Enter Your PhoneNumber">
                     <br><br>
-                    <button type="submit"><p style="color: plum;font-size: large">회원가입</p></button></br>
+                    <button type="submit"><p style="color: cornflowerblue ;font-size: large">회원가입</p></button></br>
                     <a href="<%=request.getContextPath()%>/">Go Back!!</a>
                 </fieldset>
             </form>
+
+
         </div>
     </div>
 

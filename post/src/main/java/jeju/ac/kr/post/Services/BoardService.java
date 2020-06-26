@@ -5,6 +5,7 @@ import jeju.ac.kr.post.DaoFactory.BoardDao;
 import jeju.ac.kr.post.Domain.BoardDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -20,32 +21,32 @@ public class BoardService {
         this.boardDao = boardDao;
     }
 
+    @Transactional
     public BoardDto getBoard(final int id) {
         return boardDao.getBoard(id);
     }
 
+    @Transactional
     public List<BoardDto> getBoards() {
         return boardDao.getBoards();
     }
 
-    public void addBoard(final BoardDto board) {
+    @Transactional
+    public BoardDto setBoard(final String name,final String phone,final String email) {
+        return boardDao.setBoard(name, phone, email);
+    }
 
+    @Transactional
+    public void addBoard(final BoardDto board) {
         boardDao.addBoard(board);
     }
 
-    public BoardDto setBoard(String name, String phone, String email) {
-        BoardDto board = new BoardDto();
-        board.setName(name);
-        board.setEmail(email);
-        board.setPhone(phone);
-
-        return board;
-    }
-
+    @Transactional
     public void updateBoard(final BoardDto board) {
         boardDao.updateBoard(board);
     }
 
+    @Transactional
     public void deleteBoard(final int id) {
         boardDao.deleteBoard(id);
     }

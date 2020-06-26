@@ -11,7 +11,7 @@
 <c:choose>
     <c:when test="${boards != null}">
         <div class="ADD" style="text-align: center;margin-top:100px">
-            <h2>Spring Boot MVC and JDBC CRUD Example</h2>
+            <h1>${member.name}님 환영합니다. </h1>
         <h3>List of Boards</h3>
             <div class="table" style="margin-left:450px;">
         <table cellpadding="5" cellspacing="5">

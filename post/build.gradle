@@ -28,6 +28,11 @@ dependencies {
     implementation('org.apache.tomcat.embed:tomcat-embed-jasper:9.0.30')
     implementation('javax.servlet:jstl:1.2')
     implementation('mysql:mysql-connector-java:8.0.17')
+
+
+    //session
+//    implementation 'org.springframework.session:spring-session-core'
+
     //required only if jdk 9 or higher version is used
     runtimeOnly('javax.xml.bind:jaxb-api:2.4.0-b180830.0359')
     compileOnly 'org.projectlombok:lombok:1.18.12'
@@ -35,4 +40,12 @@ dependencies {
 
     testCompileOnly 'org.projectlombok:lombok:1.18.12'
     testAnnotationProcessor 'org.projectlombok:lombok:1.18.12'
+
+    //spring security
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-security', version: '2.1.8.RELEASE'
+
+//    compile 'io.jsonwebtoken:jjwt:0.6.0'
+
+
+
 }
