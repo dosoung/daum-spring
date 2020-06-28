@@ -3,11 +3,8 @@ package jeju.ac.kr.post.Controller;
 
 import jeju.ac.kr.post.Domain.UserDto;
 import jeju.ac.kr.post.Services.UserService;
-import org.apache.catalina.User;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.servlet.http.HttpServletRequest;
@@ -41,7 +38,7 @@ public class UserController {
                           RedirectAttributes rttr) {
 
         if(name.equals("") || phone.equals("")|| email.equals("") || password.equals("") ||password2.equals("")) {
-            rttr.addFlashAttribute("msg",0);
+            printNullMessage(rttr);
             return "redirect:/register";
         } else if(!password.equals(password2)) {
             rttr.addFlashAttribute("msg",1);
@@ -58,6 +55,10 @@ public class UserController {
             rttr.addFlashAttribute("msg", true);
             return "redirect:/";
 
+    }
+
+    private void printNullMessage(RedirectAttributes rttr) {
+        rttr.addFlashAttribute("msg",0);
     }
 
     @PostMapping("/login")
